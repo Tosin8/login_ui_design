@@ -81,8 +81,9 @@ class _MyCustomLoginUIState extends State<MyCustomLoginUI>
                                 style: TextStyle(
                                     fontSize: 30,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.white), 
-                                    )),                           const SizedBox(),
+                                    color: Colors.white
+                                    ), 
+                                    ),                            SizedBox(),
 
                                     component1(Icons.account_circle_outlined, 'Username', 
                                     false, false), 
@@ -92,14 +93,14 @@ class _MyCustomLoginUIState extends State<MyCustomLoginUI>
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         RichText(
-                                          text: const TextSpan(
+                                          text: TextSpan(
                                             text: 'Forgot Password ',
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.bold),
                                     
-                                          ), 
+                                          
                                           recognizer: TapGestureRecognizer()
                                             ..onTap = () {
                                               HapticFeedback.lightImpact();
@@ -110,14 +111,19 @@ class _MyCustomLoginUIState extends State<MyCustomLoginUI>
                                                   timeInSecForIosWeb: 1,
                                                   backgroundColor: Colors.black,
                                                   textColor: Colors.white,
-                                                  fontSize: 16.0);
-          })        ), 
-          SizedBox(width: width/10), 
+                                                  fontSize: 16.0
+                                                  );
+          })       
+           ), 
+          SizedBox(width: width /10), 
           RichText(
-            text: const TextSpan(text: 'Create a new Account', style: TextStyle(
+            text: TextSpan(
+              text: 'Create a new Account', 
+              style: TextStyle(
               color: Colors.white,
                fontSize: 15,
-                fontWeight: FontWeight.bold),
+                fontWeight: FontWeight.bold
+                ),
                 recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   HapticFeedback.lightImpact();
@@ -130,17 +136,64 @@ class _MyCustomLoginUIState extends State<MyCustomLoginUI>
                       textColor: Colors.white,
                       fontSize: 16.0
                       );
-                }),
+                }
+                ),
           ),
-          )], 
-                ), 
-                 
-            )
-                                              ), 
+          ], 
+                   ), 
+                      ], 
+                ),
+                 ),  ], 
+            
+            ) ), 
+            
+                                              
+
+                                               Expanded (
+                                                flex: 3,
+                                                 child: Stack(
+                                                  children: [
+                                                    Center(
+                                                      child: Container(
+                                                        margin: const EdgeInsets.only(
+                                                          bottom: width* 07
+                                                          ), 
+                                                    height: width * .7, 
+                                                    width: width * .7,
+                                                    decoration: const  BoxDecoration(
+                                                      shape: BoxShape.circle, 
+                                                      gradient: LinearGradient(
+                                                        colors: [
+                                                        Colors.transparent, 
+                                                        Colors.transparent, 
+                                                       Color(0xff09090A), 
+                                                      ], 
+                                                      begin: Alignment.topCenter, 
+                                                      end: Alignment.bottomCenter, 
+                                                      ), 
+                                                      ),
+                                                    )), 
+                                                    Center(Container(height: width *.2, width: width *.2, 
+                                                    alignment: Alignment.center, decoration: const BoxDecoration(color: Color(0xffA9DED8), 
+                                                    shape: BoxShape.circle, 
+                                                    ),
+                                                   
+                                                  ]
+                                                 )),
                                        
     ),
     );
     
                          
+  }
+}
+
+
+Widget 
+
+class MyBehavior extends ScrollBehavior{
+  @override 
+  Widget buildViewportChrome(BuildContext context, Widget child, AxisDirection axisDirection) {
+    return child;
   }
 }
