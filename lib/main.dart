@@ -111,18 +111,36 @@ class _MyCustomLoginUIState extends State<MyCustomLoginUI>
                                                   backgroundColor: Colors.black,
                                                   textColor: Colors.white,
                                                   fontSize: 16.0);
-                                                ),
-                                              );
-                                            },
-                                        component2(Icons.check_circle_outlined, 'Remember Me', false),
-                                        component2(Icons.lock_outlined, 'Forgot Password?', true),
-                                      ],
-                                    ),
-                          ],
-                        ))
-                  ],
-                )),
-          )),
-    )
+          })        ), 
+          SizedBox(width: width/10), 
+          RichText(
+            text: const TextSpan(text: 'Create a new Account', style: TextStyle(
+              color: Colors.white,
+               fontSize: 15,
+                fontWeight: FontWeight.bold),
+                recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  HapticFeedback.lightImpact();
+                  Fluttertoast.showToast(
+                      msg: 'Create a new Account',
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.black,
+                      textColor: Colors.white,
+                      fontSize: 16.0
+                      );
+                }),
+          ),
+          )], 
+                ), 
+                 
+            )
+                                              ), 
+                                       
+    ),
+    );
+    
+                         
   }
 }
